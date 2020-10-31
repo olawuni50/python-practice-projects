@@ -1,3 +1,4 @@
+
 """1)This program allows users to type courses and grades
 2) print out all the registered courses
 3) print out the total grades
@@ -10,10 +11,10 @@
 
 class School:
     def __init__(self):
-        self.courses = []
+        self.courses = []               #create list of courses and grades
         self.grades = []
 
-    def describe(self):
+    def calculate_grades_courses(self):
         """allows users to type in courses and grades and save in a list"""
 
         while True:
@@ -52,28 +53,28 @@ class School:
             elif grade in range(0, 40):
                 print("F9 - Fail")
 
-            self.grades.append(grade)
-            self.courses.append(course)
+            self.grades.append(grade)           #Appends grade to list
+            self.courses.append(course)         #Appends course to list
 
         print("\nList of Courses: ")
         c = [cours for cours in self.courses]
-        print(c)
+        print(c)                                    #lists all courses entered
 
         print("List of Grades: ")
         g = [grad for grad in self.grades]
-        print(g)
+        print(g)                                    #lists all grades entered
 
         d = dict(zip(c, g))
-        print(d)
+        print(d)                                    #convert lists to dictionary
 
         print("\nList of Passed Courses: ")
         for key, value in d.items():
-            if value >= 50:
+            if value >= 50:                         #list all passed courses
                 print(key)
 
         print("\nList of Failed Courses: ")
         for key, value in d.items():
-            if value < 50:
+            if value < 50:                          #list all failed courses
                 print(key)
 
     def total_obtained(self):
@@ -90,7 +91,7 @@ class School:
 
 
 x = School()
-x.describe()
+x.calculate_grades_courses()
 print(f"Total Obtained: {x.total_obtained()}")
 print(f"Total Obtainable: {x.total_obtainable()}")
 print(f"Total Average: {x.total_average()}")

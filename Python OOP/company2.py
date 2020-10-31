@@ -1,6 +1,7 @@
 """ Engineering Department
 """
 from company1 import Manager, Accountant, Admin
+"""Composition"""
 class CTO(Admin):
     def __init__(self, fname, lname, age, position):
         Admin.__init__(self, fname, lname, age, position, 8000)
@@ -21,12 +22,12 @@ class COO(CTO):
 
 class Company:
     def __init__(self):
-        self.manager = Manager("Dele", "Ben", 39, "Manager")
+        self.manager = Manager("Dele", "Ben", 39, "Manager")        #Embed Other object
         self.accountant = Accountant("Perry", "Jones", 59, "Accountant", 10000000)
         self.staff = COO("Tyler", "Jones", 23, "COO")
 
     def all(self):
-        cto = CTO("Peter", "Jack", 67, "CTO")
+        cto = CTO("Peter", "Jack", 67, "CTO")               #activate other object
         coo = COO("Kyle", "Daniel", 43, "COO")
         print(coo.order(self.manager))
         print(coo.salary_payment(self.accountant))
@@ -41,5 +42,3 @@ class Company:
 if __name__ == "__main__":
     company = Company()
     company.all()
-
-
