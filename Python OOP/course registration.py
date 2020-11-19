@@ -89,9 +89,9 @@ class School:
     def total_average(self):
         return (self.total_obtained()/self.total_obtainable()) * 100
 
-
-x = School()
-x.calculate_grades_courses()
-print(f"Total Obtained: {x.total_obtained()}")
-print(f"Total Obtainable: {x.total_obtainable()}")
-print(f"Total Average: {x.total_average()}")
+if __name__ =="__main__":
+    x = School()
+    x.calculate_grades_courses()
+    print(f"Total Obtained: {x.total_obtained()}")
+    print(f"Total Obtainable: {x.total_obtainable()}")
+    print(f"Total Average: {x.total_average()}")

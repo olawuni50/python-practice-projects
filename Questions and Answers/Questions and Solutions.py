@@ -16,7 +16,7 @@ def intersect(*args):
 a = intersect(y, x)
 print(sum(a))
                                         #2
-"""Write a Python code of a program that adds all numbers that are multiples of **either 7 or 9** up to 
+"""Write a Python code of a program that adds all numbers that are multiples of **either 7 or 9** up to
 600(including 600).Ensure that numbers like 63 are added only once in the sum."""
 
 def union(*arg):
@@ -56,7 +56,7 @@ print(f"Average is : {average}")
 
                                             #5
 """Write a Python code for the following:,
-* Ask the user to enter a Number, 
+* Ask the user to enter a Number,
 * Display the summation of multiples of 7 up to that number (**from 1 to N inclusive**)"""
 
 numbers = int(input("Enter number: "))
@@ -191,4 +191,54 @@ while True:
 
 
 
+                                                #11
 
+"""The program that you create for this exercise will begin by reading the
+cost fo a meal order at a restaurant from the user. Then your program will compute the
+tax and tip fo the meal. use your local tax rate when computing the amount of tax owing.
+Compute the tip as 18 percent of the meal amount (without the tax).
+The output from your program should include the tax amount, the tip amount, and
+the grand total for the meal including boh the tax and the tip. Format the output
+so that all of the values are displayed using two decimal places."""
+
+
+tax_rate = float(input("Tax rate: "))
+tip_amount = float(input("Amount of Tip: "))
+meal_amount = float(input("Enter amount of Meal: "))
+print(tax_rate)
+print(tip_amount)
+tip_amount = meal_amount * tip_amount
+tax_amount = meal_amount * tax_rate
+total_amount = meal_amount + tip_amount + tax_amount
+print(f"Tax amount: {tax_amount}")
+print(f"\nAmount of Tip: {tip_amount}")
+print(f"Total Amount: {round(total_amount,2)}")
+
+
+                                            #12
+""" Write a program that reads an integer from the user. Then your program should
+display a message indicating whether the integer is even or odd"""
+
+number = int(input("Enter number: "))
+if number % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+
+
+                                            #13
+
+""" If the user enters a, e, i, o or u then your program should display a message
+indicating that the entered letter is a vowel. If the user enters y then your program should display
+a message indicating that sometimes y is a vowel, and sometimes y is a consonant.
+otherwise your program should display a message indicating that the  letter is a consonant
+"""
+
+alphabet = ["a", "e", "i", "o", "u"]
+alpha = input("Enter Alphabeth: ")
+if alpha in alphabet:
+    print(f"{alpha} is Vowel ")
+elif alpha == 'y':
+    print(f"{alpha} could be Vowel or Consonant")
+else:
+    print(f"{alpha} is Consonant")

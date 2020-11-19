@@ -11,11 +11,11 @@ class Admin:
         self.salary = salary
 
     def role(self):
-        return self.position, "does stuff"
+        return self.position, "does stuff"      #specify admin's role
 
     def retirement_age(self):
         if self.age >= 70:
-             return f"At {self.age} you should retire"
+             return f"At {self.age} you should retire"      #
         else:
             return f"At {self.age}, you are still fit to work"
 
@@ -77,7 +77,7 @@ class Accountant(Admin):
     def role(self):
         return self.position, "\n1)Keeps all accounts records, \n2)Report to the CEO or account details"
 
-    def commodity_bought(self):
+    def commodity_price_calculation(self):
         """input and return commodity bought and the amount
         to be added to the main balance"""
 
@@ -118,11 +118,11 @@ if __name__ == "__main__":
     ceo = CEO("Tyler", "Perry", 70, "CEO")
     manager = Manager("Dele", "Ben", 39, "Manager")
     accountant = Accountant("Perry", "Jones", 59, "Accountant", 10000000)
+    print(accountant.commodity_price_calculation())
+    print(accountant.role())
+    print(accountant)
     print(ceo.role())
     print(ceo.monthly_salary_bonus())
     print(ceo.tax_insurance_deduction())
     print(ceo.total_salary())
     print(ceo)
-
-
-
