@@ -1,9 +1,14 @@
 import csv
 
+#Empty list
 courses, grades = [], []
 
 
 def courses_grades():
+    """
+    Allows teachers to enter courses and grades of students
+    :return:
+    """
     while True:
         print("Enter course number " + str(len(courses) + 1) + " press space bar to quit ")
         course = input( )
