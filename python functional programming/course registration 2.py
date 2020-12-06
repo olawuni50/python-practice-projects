@@ -1,3 +1,5 @@
+import csv
+
 courses, grades = [], []
 
 
@@ -73,10 +75,31 @@ def total_average():
     return round(total_obtained()/ total_obtainable() * 100, 1)
 
 
+def write_csv():
+     with open("C:\\Users\\olawuni ayodeji\\Desktop\\myDocs\\csvcsvcourse.csv", 'w', newline="") as write:
+        fileWrite = csv.writer(write)
+        fileWrite.writerow(courses)
+        fileWrite.writerow(grades)
+
+        write.close()
+
+def read_csv():
+    w = []
+    with open("C:\\Users\\olawuni ayodeji\\Desktop\\myDocs\\csvcourse.csv", 'r') as read:
+        fileRead = csv.reader(read)
+        for file in fileRead:
+            w.append(file)
+
+        return w
+
+
+
 if __name__ == "__main__":
     courses_grades()
     print(f"\nTotal Obtained: {total_obtained()}")
     print(f"\nTotal Obtainable: {total_obtainable()}")
     print(f"\nTotal average: {total_average()}")
+    print(write_csv())
+    print(read_csv())
 
 
