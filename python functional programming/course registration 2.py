@@ -7,7 +7,6 @@ courses, grades = [], []
 def courses_grades():
     """
     Allows teachers to enter courses and grades of students
-    :return:
     """
     while True:
         print("Enter course number " + str(len(courses) + 1) + " press space bar to quit ")
@@ -43,8 +42,10 @@ def courses_grades():
         elif grade in range(0, 40):
             print("F9 - Fail")
 
+        # Add courses and grades to empty list
         grades.append(grade)
         courses.append(course)
+        # list comprehension
     print("\nLists of courses: ")
     c = [cours for cours in courses]
     print(c)
@@ -53,7 +54,8 @@ def courses_grades():
     g = [grad for grad in grades]
     print(g)
 
-    d = dict(zip(c, g))     # convert lists to dictionary
+    # convert list to dictionary
+    d = dict(zip(c, g))
     print(d)
 
     print("\nList of Passed Courses: ")
@@ -66,7 +68,7 @@ def courses_grades():
         if value < 50:
             print(key.title())
 
-
+# total obtained by the students
 def total_obtained():
     sum(grades)
     return (sum(grades))
@@ -79,6 +81,7 @@ def total_obtainable():
 def total_average():
     return round(total_obtained()/ total_obtainable() * 100, 1)
 
+# write to csv file
 
 def write_csv():
      with open("C:\\Users\\olawuni ayodeji\\Desktop\\myDocs\\csvcsvcourse.csv", 'w', newline="") as write:
@@ -88,6 +91,7 @@ def write_csv():
 
         write.close()
 
+# read csv files
 def read_csv():
     w = []
     with open("C:\\Users\\olawuni ayodeji\\Desktop\\myDocs\\csvcourse.csv", 'r') as read:
@@ -96,7 +100,6 @@ def read_csv():
             w.append(file)
 
         return w
-
 
 
 if __name__ == "__main__":
